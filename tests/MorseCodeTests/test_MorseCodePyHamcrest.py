@@ -1,0 +1,44 @@
+import unittest
+from MorseCode.MorseCode import MorseCode
+from hamcrest import *
+from hamcrest.core.base_matcher import BaseMatcher
+
+
+class MorseCodeTest(unittest.TestCase):
+
+    def setUp(self):
+        self.temp = MorseCode()
+
+    def test_MorseCode_Instance(self):
+        assert_that(self.temp, instance_of(MorseCode))
+
+    def test_encode_a_equal(self):
+        assert_that(self.temp.morse_encode("a"), equal_to("._"))
+
+    def test_encode_a_length(self):
+        assert_that(self.temp.morse_encode("a"), has_length(len("._")))
+
+    def test_encode_d_equal(self):
+        assert_that(self.temp.morse_encode("d"), equal_to("_.."))
+
+    def test_encode_d_not_none(self):
+        assert_that(self.temp.morse_encode("d"), not_none())
+
+    def test_encode_n_equal(self):
+        assert_that(self.temp.morse_encode("n"), equal_to("_."))
+
+    def test_encode_n_has_string(self):
+        assert_that(self.temp.morse_encode("n"), has_string("_."))
+
+    def test_encode_z_equal(self):
+        assert_that(self.temp.morse_encode("z"), equal_to("__.."))
+
+    def test_encode_z_contains_in_order(self):
+        assert_that(self.temp.morse_encode("z"), string_contains_in_order("_", "_", "."))
+
+    def tearDown(self):
+        self.temp = None
+
+
+if __name__ == '__main__':
+    unittest.main()
