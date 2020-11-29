@@ -36,6 +36,12 @@ class MorseCodeTest(unittest.TestCase):
     def test_encode_z_contains_in_order(self):
         assert_that(self.temp.morse_encode("z"), string_contains_in_order("_", "_", "."))
 
+    def test_decode_a_equal(self):
+        assert_that(self.temp.morse_decode("._"), equal_to("a"))
+
+    def test_decode_a_starts_with(self):
+        assert_that(self.temp.morse_decode("._"), has_string(starts_with('a')))
+
     def tearDown(self):
         self.temp = None
 

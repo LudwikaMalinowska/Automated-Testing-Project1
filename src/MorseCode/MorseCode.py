@@ -32,3 +32,6 @@ class MorseCode:
 
     def morse_encode(self, text):
         return self.morse_table[text]
+
+    def morse_decode(self, text):
+        ...
