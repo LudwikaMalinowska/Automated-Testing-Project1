@@ -28,10 +28,23 @@ class MorseCode:
         "x": "_.._",
         "y": "_.__",
         "z": "__..",
+
+        "1": ".____",
+        "2": "..___",
+        "3": "...__",
+        "4": "...._",
+        "5": ".....",
+        "6": "_....",
+        "7": "__...",
+        "8": "___..",
+        "9": "____.",
+        "0": "_____",
     }
+
+    reverse_morse_table = {v: k for k, v in morse_table.items()}
 
     def morse_encode(self, text):
         return self.morse_table[text]
 
-    def morse_decode(self, text):
-        ...
+    def morse_decode(self, morseText):
+        return self.reverse_morse_table[morseText]
