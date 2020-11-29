@@ -44,7 +44,17 @@ class MorseCode:
     reverse_morse_table = {v: k for k, v in morse_table.items()}
 
     def morse_encode(self, text):
-        return self.morse_table[text]
+        # return self.morse_table[text]
+
+        morse_text = ""
+
+        for i in range(len(text)):
+            if i == len(text) - 1:
+                morse_text += self.morse_table[text[i]]
+            else:
+                morse_text += self.morse_table[text[i]] + " "
+
+        return morse_text
 
     def morse_decode(self, morseText):
         return self.reverse_morse_table[morseText]
