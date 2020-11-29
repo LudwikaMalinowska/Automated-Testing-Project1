@@ -42,6 +42,12 @@ class MorseCodeTest(unittest.TestCase):
     def test_decode_a_starts_with(self):
         assert_that(self.temp.morse_decode("._"), has_string(starts_with('a')))
 
+    def test_decode_d_equal(self):
+        assert_that(self.temp.morse_decode("_.."), equal_to("d"))
+
+    def test_decode_d_starts_with(self):
+        assert_that(self.temp.morse_decode("_.."), has_string(ends_with('d')))
+
     def tearDown(self):
         self.temp = None
 

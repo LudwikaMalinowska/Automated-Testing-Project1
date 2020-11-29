@@ -40,6 +40,12 @@ class MorseCodeTest(unittest.TestCase):
     def test_decode_a_doesnt_contain(self):
         assert_that(self.temp.morse_decode("._")).does_not_contain("b")
 
+    def test_decode_d(self):
+        assert_that(self.temp.morse_decode("_..")).is_equal_to("d")
+
+    def test_decode_d_contain_doesnt_contain(self):
+        assert_that(self.temp.morse_decode("_..")).contains("d").does_not_contain("c")
+
     def tearDown(self):
         self.temp = None
 
