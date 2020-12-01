@@ -49,10 +49,13 @@ class MorseCode:
         morse_text = ""
 
         for i in range(len(text)):
-            if i == len(text) - 1:
-                morse_text += self.morse_table[text[i]]
+            if text[i] == " ":
+                morse_text += "     "
             else:
-                morse_text += self.morse_table[text[i]] + " "
+                if i == len(text) - 1:
+                    morse_text += self.morse_table[text[i]]
+                else:
+                    morse_text += self.morse_table[text[i]] + " "
 
         return morse_text
 
