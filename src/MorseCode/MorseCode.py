@@ -66,8 +66,13 @@ class MorseCode:
         morse_tab = morseText.split(" ")
         # print(morse_tab)
 
+        space = 0
         for m in morse_tab:
             if m == "":
+                space += 1
+                if space == 5:
+                    text += " "
+                    space = 0
                 continue
             else:
                 text += self.reverse_morse_table[m]
