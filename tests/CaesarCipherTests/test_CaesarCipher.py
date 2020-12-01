@@ -9,7 +9,7 @@ class CaesarTest(unittest.TestCase):
         self.temp = CaesarCipher()
 
     def test_a_cipher(self):
-        self.assertEqual(self.temp.morse_encode("a"), "d")
+        self.assertEqual(self.temp.caesar_cipher("a"), "d")
 
     def tearDown(self):
         self.temp = None
