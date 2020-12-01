@@ -62,6 +62,9 @@ class MorseCodeTest(unittest.TestCase):
     def test_morse_abc_def_decode(self):
         self.assertEqual(self.temp.morse_decode("._ _... _._.      _.. . .._."), "abc def")
 
+    def test_morse_xyz_123_decode(self):
+        self.assertEqual(self.temp.morse_decode("_.._ _.__ __..      .____ ..___ ...__"), "xyz 123")
+
     def tearDown(self):
         self.temp = None
 
