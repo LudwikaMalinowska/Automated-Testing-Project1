@@ -41,8 +41,11 @@ class CaesarTest(unittest.TestCase):
     def test_decode_a(self):
         assert_that(self.temp.caesar_decipher("d")).is_equal_to("a")
 
-    def test_decode_z(self):
+    def test_decode_w(self):
         assert_that(self.temp.caesar_decipher("z")).is_equal_to("w")
+
+    def test_decode_x(self):
+        assert_that(self.temp.caesar_decipher("a")).is_equal_to("x")
 
     def tearDown(self):
         self.temp = None
