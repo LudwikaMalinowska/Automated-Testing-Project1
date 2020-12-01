@@ -14,6 +14,9 @@ class CaesarTest(unittest.TestCase):
     def test_w_cipher(self):
         self.assertEqual(self.temp.caesar_cipher("w"), "z")
 
+    def test_x_cipher(self):
+        self.assertEqual(self.temp.caesar_cipher("x"), "a")
+
     def tearDown(self):
         self.temp = None
 
