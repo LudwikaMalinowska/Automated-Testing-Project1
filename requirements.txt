@@ -1,2 +1,4 @@
-nose
-parameterized
+nose~=1.3.7
+parameterized~=0.7.4
+assertpy~=1.1
+setuptools~=40.6.2
