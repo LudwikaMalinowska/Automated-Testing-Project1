@@ -60,4 +60,16 @@ class MorseCode:
         return morse_text
 
     def morse_decode(self, morseText):
-        return self.reverse_morse_table[morseText]
+        # return self.reverse_morse_table[morseText]
+
+        text = ""
+        morse_tab = morseText.split(" ")
+        # print(morse_tab)
+
+        for m in morse_tab:
+            if m == "":
+                continue
+            else:
+                text += self.reverse_morse_table[m]
+
+        return text
