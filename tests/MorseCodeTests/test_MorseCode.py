@@ -50,6 +50,9 @@ class MorseCodeTest(unittest.TestCase):
     def test_morse_veni_vidi_encode(self):
         self.assertEqual(self.temp.morse_encode("veni vidi"), "..._ . _. ..      ..._ .. _.. ..")
 
+    def test_morse_abc_decode(self):
+        self.assertEqual(self.temp.morse_decode("._ _... _._."), "abc")
+
     def tearDown(self):
         self.temp = None
 
