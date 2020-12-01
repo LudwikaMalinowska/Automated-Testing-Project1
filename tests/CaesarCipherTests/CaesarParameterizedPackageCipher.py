@@ -17,6 +17,7 @@ class CaesarParameterizedPackage(unittest.TestCase):
         ("abc", "def"),
         ("wxyz", "zabc"),
         ("veni", "yhql"),
+        ("abc def", "def ghi"),
     ])
     def test_one_parameterized(self, text, result):
         self.assertEqual(self.tmp.caesar_cipher(text), result)
@@ -33,6 +34,7 @@ class CaesarParameterizedPackage(unittest.TestCase):
     ("abc", "def"),
     ("wxyz", "zabc"),
     ("veni", "yhql"),
+    ("abc def", "def ghi"),
 ])
 def test_morse_encode_outside_class(text, result):
     r = CaesarCipher()
@@ -47,6 +49,7 @@ def test_morse_encode_outside_class(text, result):
     ("abc", "def"),
     ("wxyz", "zabc"),
     ("veni", "yhql"),
+    ("abc def", "def ghi"),
 ])
 class MorseCodeParameterizedPackage2(unittest.TestCase):
 
