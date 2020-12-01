@@ -35,12 +35,15 @@ class CaesarCipher:
     def caesar_cipher(self, text):
         # return self.reverse_letters[self.letters[text] + 3]
 
-        letterNr = self.letters[text]
-        letterNr += 3
-        if letterNr > 25:
-            letterNr -= 26
+        ciphered = ""
+        for letter in text:
+            letterNr = self.letters[letter]
+            letterNr += 3
+            if letterNr > 25:
+                letterNr -= 26
+            ciphered += self.reverse_letters[letterNr]
 
-        return self.reverse_letters[letterNr]
+        return ciphered
 
 
     def caesar_decipher(self, caesar_text):
