@@ -38,6 +38,9 @@ class CaesarTest(unittest.TestCase):
     def test_a_decipher(self):
         self.assertEqual(self.temp.caesar_decipher("d"), "a")
 
+    def test_z_decipher(self):
+        self.assertEqual(self.temp.caesar_decipher("z"), "w")
+
     def tearDown(self):
         self.temp = None
 
