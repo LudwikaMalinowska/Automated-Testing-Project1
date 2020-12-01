@@ -51,5 +51,7 @@ class CaesarCipher:
 
 
     def caesar_decipher(self, caesar_text):
-        ...
+        nr = self.letters[caesar_text]
+        nr = nr - 3
+        return self.reverse_letters[nr]
 
