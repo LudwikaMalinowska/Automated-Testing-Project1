@@ -37,6 +37,10 @@ class CaesarCipher:
 
         ciphered = ""
         for letter in text:
+            if letter == " ":
+                ciphered += " "
+                continue
+
             letterNr = self.letters[letter]
             letterNr += 3
             if letterNr > 25:
