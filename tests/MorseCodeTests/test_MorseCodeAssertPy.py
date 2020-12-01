@@ -85,6 +85,9 @@ class MorseCodeTest(unittest.TestCase):
     def test_decode_xyz_123(self):
         assert_that(self.temp.morse_decode("_.._ _.__ __..      .____ ..___ ...__")).is_equal_to("xyz 123")
 
+    def test_decode_veni_vidi(self):
+        assert_that(self.temp.morse_decode("..._ . _. ..      ..._ .. _.. ..")).is_equal_to("veni vidi")
+
     def tearDown(self):
         self.temp = None
 
