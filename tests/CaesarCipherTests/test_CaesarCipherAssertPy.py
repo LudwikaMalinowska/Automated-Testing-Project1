@@ -38,6 +38,9 @@ class CaesarTest(unittest.TestCase):
     def test_encode_veni_vidi_vici(self):
         assert_that(self.temp.caesar_cipher("veni vidi vici")).is_equal_to("yhql ylgl ylfl")
 
+    def test_decode_a(self):
+        assert_that(self.temp.caesar_decipher("d")).is_equal_to("a")
+
     def tearDown(self):
         self.temp = None
 
