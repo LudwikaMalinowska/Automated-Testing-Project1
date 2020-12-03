@@ -19,6 +19,8 @@ class CaesarParameterizedPackage(unittest.TestCase):
         ("veni", "yhql"),
         ("abc def", "def ghi"),
         ("veni vidi vici", "yhql ylgl ylfl"),
+        ("the quick brown fox jumps over the lazy dog",
+         "wkh txlfn eurzq ira mxpsv ryhu wkh odcb grj")
     ])
     def test_one_parameterized(self, text, result):
         self.assertEqual(self.tmp.caesar_cipher(text), result)
@@ -37,6 +39,8 @@ class CaesarParameterizedPackage(unittest.TestCase):
     ("veni", "yhql"),
     ("abc def", "def ghi"),
     ("veni vidi vici", "yhql ylgl ylfl"),
+    ("the quick brown fox jumps over the lazy dog",
+     "wkh txlfn eurzq ira mxpsv ryhu wkh odcb grj")
 ])
 def test_morse_encode_outside_class(text, result):
     r = CaesarCipher()
@@ -53,6 +57,8 @@ def test_morse_encode_outside_class(text, result):
     ("veni", "yhql"),
     ("abc def", "def ghi"),
     ("veni vidi vici", "yhql ylgl ylfl"),
+    ("the quick brown fox jumps over the lazy dog",
+     "wkh txlfn eurzq ira mxpsv ryhu wkh odcb grj")
 ])
 class MorseCodeParameterizedPackage2(unittest.TestCase):
 
