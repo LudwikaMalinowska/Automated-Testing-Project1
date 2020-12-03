@@ -50,6 +50,10 @@ class MorseCodeTest(unittest.TestCase):
     def test_morse_veni_vidi_encode(self):
         self.assertEqual(self.temp.morse_encode("veni vidi"), "..._ . _. ..      ..._ .. _.. ..")
 
+    def test_morse_pangram_encode(self):
+        self.assertEqual(self.temp.morse_encode("the quick brown fox jumps over the lazy dog"),
+                         "_ .... .      __._ .._ .. _._. _._      _... ._. ___ .__ _.      .._. ___ _.._      .___ .._ __ .__. ...      ___ ..._ . ._.      _ .... .      ._.. ._ __.. _.__      _.. ___ __.")
+
     def test_morse_abc_decode(self):
         self.assertEqual(self.temp.morse_decode("._ _... _._."), "abc")
 
