@@ -68,6 +68,11 @@ class MorseCodeTest(unittest.TestCase):
         assert_that(self.temp.morse_encode("xyz 123")).is_equal_to("_.._ _.__ __..      .____ ..___ ...__")
 
     def test_encode_veni_vidi(self):
+        assert_that(self.temp.morse_encode("the quick brown fox jumps over the lazy dog"))\
+            .is_equal_to("_ .... .      __._ .._ .. _._. _._      _... ._. ___ .__ _.      .._. ___ _.._      .___ .._ __ .__. ...      ___ ..._ . ._.      _ .... .      ._.. ._ __.. _.__      _.. ___ __.")
+
+
+    def test_encode_pangram(self):
         assert_that(self.temp.morse_encode("veni vidi")).is_equal_to("..._ . _. ..      ..._ .. _.. ..")
 
     def test_decode_abc(self):
