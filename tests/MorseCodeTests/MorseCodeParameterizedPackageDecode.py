@@ -20,6 +20,10 @@ class MorseCodeParameterizedPackage(unittest.TestCase):
         ("._ _... _._.      _.. . .._.", "abc def"),
         ("_.._ _.__ __..      .____ ..___ ...__", "xyz 123"),
         ("..._ . _. ..      ..._ .. _.. ..", "veni vidi"),
+        ("_ .... .      __._ .._ .. _._. _._      _... ._. ___ .__ _."
+         "      .._. ___ _.._      .___ .._ __ .__. ...   "
+         "   ___ ..._ . ._.      _ .... .      ._.. ._ __.. _.__      _.. ___ __.",
+         "the quick brown fox jumps over the lazy dog")
     ])
     def test_one_parameterized(self, text, result):
         self.assertEqual(self.tmp.morse_decode(text), result)
@@ -39,6 +43,10 @@ class MorseCodeParameterizedPackage(unittest.TestCase):
     ("._ _... _._.      _.. . .._.", "abc def"),
     ("_.._ _.__ __..      .____ ..___ ...__", "xyz 123"),
     ("..._ . _. ..      ..._ .. _.. ..", "veni vidi"),
+    ("_ .... .      __._ .._ .. _._. _._      _... ._. ___ .__ _."
+     "      .._. ___ _.._      .___ .._ __ .__. ...   "
+     "   ___ ..._ . ._.      _ .... .      ._.. ._ __.. _.__      _.. ___ __.",
+     "the quick brown fox jumps over the lazy dog")
 ])
 def test_morse_encode_outside_class(text, result):
     r = MorseCode()
@@ -56,6 +64,10 @@ def test_morse_encode_outside_class(text, result):
     ("._ _... _._.      _.. . .._.", "abc def"),
     ("_.._ _.__ __..      .____ ..___ ...__", "xyz 123"),
     ("..._ . _. ..      ..._ .. _.. ..", "veni vidi"),
+    ("_ .... .      __._ .._ .. _._. _._      _... ._. ___ .__ _."
+     "      .._. ___ _.._      .___ .._ __ .__. ...   "
+     "   ___ ..._ . ._.      _ .... .      ._.. ._ __.. _.__      _.. ___ __.",
+     "the quick brown fox jumps over the lazy dog")
 ])
 class MorseCodeParameterizedPackage2(unittest.TestCase):
 
