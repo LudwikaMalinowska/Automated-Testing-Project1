@@ -43,8 +43,10 @@ class CaesarCipher:
 
             letterNr = self.letters[letter]
             letterNr += 3
-            if letterNr > 25:
-                letterNr -= 26
+            # if letterNr > 25:
+            #     letterNr -= 26
+            
+            letterNr %= 26
             ciphered += self.reverse_letters[letterNr]
 
         return ciphered
