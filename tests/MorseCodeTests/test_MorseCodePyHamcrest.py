@@ -94,6 +94,12 @@ class MorseCodeTest(unittest.TestCase):
     def test_decode_veni_vidi_equal(self):
         assert_that(self.temp.morse_decode("..._ . _. ..      ..._ .. _.. .."), equal_to("veni vidi"))
 
+    def test_decode_pangram_equal(self):
+        assert_that(self.temp.morse_decode( "_ .... .      __._ .._ .. _._. _._      _... ._. ___ .__ _."
+                                            "      .._. ___ _.._      .___ .._ __ .__. ...   "
+                                            "   ___ ..._ . ._.      _ .... .      ._.. ._ __.. _.__      _.. ___ __."),
+                    equal_to("the quick brown fox jumps over the lazy dog"))
+
     def tearDown(self):
         self.temp = None
 
