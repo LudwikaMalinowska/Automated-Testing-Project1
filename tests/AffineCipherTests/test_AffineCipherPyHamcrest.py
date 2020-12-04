@@ -4,7 +4,7 @@ from hamcrest import *
 from hamcrest.core.base_matcher import BaseMatcher
 
 
-class CaesarTest(unittest.TestCase):
+class AffineTest(unittest.TestCase):
 
     def setUp(self):
         self.temp = AffineCipher()
@@ -24,6 +24,9 @@ class CaesarTest(unittest.TestCase):
     def test_encode_pangram_equal(self):
         assert_that(self.temp.affine_cipher("the quick brown fox jumps over the lazy dog", 3, 12),
                     equal_to("rhy iuksq plcaz bcd nuwfo cxyl rhy tmjg vce"))
+
+    def test_decipher_a_equal(self):
+        assert_that(self.temp.affine_cipher("d", 1, 3), equal_to("a"))
 
     def tearDown(self):
         self.temp = None
