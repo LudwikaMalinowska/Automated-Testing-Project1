@@ -41,7 +41,7 @@ class AffineTest(unittest.TestCase):
         assert_that(self.temp.affine_decipher("xyzk xkvk", 3, 12), equal_to("veni vidi"))
 
     def test_decipher_pangram_equal(self):
-        assert_that(self.temp.affine_decipher("the quick brown fox jumps over the lazy dog", 3, 12),
+        assert_that(self.temp.affine_decipher("rhy iuksq plcaz bcd nuwfo cxyl rhy tmjg vce", 3, 12),
                     equal_to("the quick brown fox jumps over the lazy dog"))
 
     def tearDown(self):
