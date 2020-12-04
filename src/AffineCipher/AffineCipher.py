@@ -33,12 +33,15 @@ class AffineCipher:
     reverse_letters = {v: k for k, v in letters.items()}
 
     def affine_cipher(self, text, a, b):
-        letterNr = self.letters[text]
-        letterNr *= a
-        letterNr += b
-        letterNr %= 26
+        ciphered = ""
+        for letter in text:
+            letterNr = self.letters[letter]
+            letterNr *= a
+            letterNr += b
+            letterNr %= 26
 
-        return self.reverse_letters[letterNr]
+            ciphered += self.reverse_letters[letterNr]
+        return ciphered
 
     def affine_decipher(self, affine_text, a, b):
         ...
