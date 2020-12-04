@@ -34,7 +34,11 @@ class AffineCipher:
 
     def affine_cipher(self, text, a, b):
         letterNr = self.letters[text]
-        return self.reverse_letters[a * letterNr + b]
+        letterNr *= a
+        letterNr += b
+        letterNr %= 26
+
+        return self.reverse_letters[letterNr]
 
     def affine_decipher(self, affine_text, a, b):
         ...
