@@ -21,6 +21,10 @@ class CaesarTest(unittest.TestCase):
     def test_encode_veni_vidi_equal(self):
         assert_that(self.temp.affine_cipher("veni vidi", 3, 12), equal_to("xyzk xkvk"))
 
+    def test_encode_pangram_equal(self):
+        assert_that(self.temp.affine_cipher("the quick brown fox jumps over the lazy dog", 3, 12),
+                    equal_to("rhy iuksq plcaz bcd nuwfo cxyl rhy tmjg vce"))
+
     def tearDown(self):
         self.temp = None
 
