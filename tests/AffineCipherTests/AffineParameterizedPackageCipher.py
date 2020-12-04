@@ -4,7 +4,7 @@ from parameterized import parameterized, parameterized_class
 from nose.tools import assert_equal, assert_raises
 
 
-class CaesarParameterizedPackage(unittest.TestCase):
+class AffineParameterizedPackage(unittest.TestCase):
 
     def setUp(self):
         self.tmp = AffineCipher()
@@ -22,7 +22,7 @@ class CaesarParameterizedPackage(unittest.TestCase):
 @parameterized([
     ("a", 1, 3, "d"),
 ])
-def test_morse_encode_outside_class(text, a, b, result):
+def test_affine_encode_outside_class(text, a, b, result):
     r = AffineCipher()
     assert_equal(r.affine_cipher(text, a, b), result)
 
@@ -30,7 +30,7 @@ def test_morse_encode_outside_class(text, a, b, result):
 @parameterized_class(('text', 'a', 'b', 'result'), [
     ("a", 1, 3, "d"),
 ])
-class MorseCodeParameterizedPackage2(unittest.TestCase):
+class AffineParameterizedPackage2(unittest.TestCase):
 
     def setUp(self):
         self.tmp = AffineCipher()

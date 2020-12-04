@@ -9,7 +9,7 @@ class AffineTest(unittest.TestCase):
         self.temp = AffineCipher()
 
     def test_cipher_a(self):
-        assert_that(self.temp.caesar_cipher("a", 1, 3)).is_equal_to("d")
+        assert_that(self.temp.affine_cipher("a", 1, 3)).is_equal_to("d")
 
     def tearDown(self):
         self.temp = None

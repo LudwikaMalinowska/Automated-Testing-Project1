@@ -13,7 +13,7 @@ class CaesarParameterizedFile(unittest.TestCase):
             else:
                 data = line.split(",")
                 text, a, b, affine_text = str(data[0]), int(data[1]),\
-                                          int(data[1]), str(data[3].strip("\n"))
+                                          int(data[2]), str(data[3].strip("\n"))
                 self.assertEqual(tmpCaesar.affine_cipher(text, a, b), affine_text)
         fileTest.close()
 
