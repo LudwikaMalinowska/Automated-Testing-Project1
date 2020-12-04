@@ -11,6 +11,9 @@ class AffineTest(unittest.TestCase):
     def test_cipher_a(self):
         assert_that(self.temp.affine_cipher("a", 1, 3)).is_equal_to("d")
 
+    def test_cipher_z(self):
+        assert_that(self.temp.affine_cipher("z", 1, 3)).is_equal_to("c")
+
     def tearDown(self):
         self.temp = None
 
