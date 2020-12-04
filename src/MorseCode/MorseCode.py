@@ -45,6 +45,8 @@ class MorseCode:
 
     def morse_encode(self, text):
         # return self.morse_table[text]
+        if not isinstance(text, str):
+            raise ValueError
 
         morse_text = ""
 
