@@ -63,6 +63,9 @@ class CaesarTest(unittest.TestCase):
     def test_abc_def_decipher(self):
         self.assertEqual(self.temp.caesar_decipher("def ghi"), "abc def")
 
+    def test_veni_vidi_vici_decipher(self):
+        self.assertEqual(self.temp.caesar_decipher("yhql ylgl ylfl"), "veni vidi vici")
+
     def tearDown(self):
         self.temp = None
 

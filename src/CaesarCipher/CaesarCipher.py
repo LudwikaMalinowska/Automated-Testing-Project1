@@ -59,7 +59,7 @@ class CaesarCipher:
             if letter == " ":
                 deciphered += " "
                 continue
-                
+
             nr = self.letters[letter]
             nr = nr - 3
 
