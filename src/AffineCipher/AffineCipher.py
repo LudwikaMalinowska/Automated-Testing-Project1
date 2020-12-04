@@ -50,6 +50,7 @@ class AffineCipher:
     def affine_decipher(self, affine_text, a, b):
         letterNr = self.letters[affine_text]
         letterNr = letterNr - b
+        letterNr %= 26
         letterNr /= a
         return self.reverse_letters[letterNr]
 
