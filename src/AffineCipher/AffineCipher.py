@@ -35,6 +35,10 @@ class AffineCipher:
     def affine_cipher(self, text, a, b):
         ciphered = ""
         for letter in text:
+            if letter == " ":
+                ciphered += " "
+                continue
+                
             letterNr = self.letters[letter]
             letterNr *= a
             letterNr += b
