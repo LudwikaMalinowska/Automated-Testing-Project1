@@ -70,6 +70,10 @@ class CaesarTest(unittest.TestCase):
     def test_decode_veni_vidi_vici_equal(self):
         assert_that(self.temp.caesar_decipher("yhql ylgl ylfl"), equal_to("veni vidi vici"))
 
+    def test_decode_pangram_equal(self):
+        assert_that(self.temp.caesar_decipher("wkh txlfn eurzq ira mxpsv ryhu wkh odcb grj"),
+                    equal_to("the quick brown fox jumps over the lazy dog"))
+
     def tearDown(self):
         self.temp = None
 
