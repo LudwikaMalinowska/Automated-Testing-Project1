@@ -100,6 +100,9 @@ class MorseCodeTest(unittest.TestCase):
                                             "   ___ ..._ . ._.      _ .... .      ._.. ._ __.. _.__      _.. ___ __."),
                     equal_to("the quick brown fox jumps over the lazy dog"))
 
+    def test_encode_exception1(self):
+        assert_that(calling(self.temp.morse_encode).with_args(1), raises(ValueError))
+
     def tearDown(self):
         self.temp = None
 
