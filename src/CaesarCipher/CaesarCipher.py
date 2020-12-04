@@ -56,6 +56,10 @@ class CaesarCipher:
 
         deciphered = ""
         for letter in caesar_text:
+            if letter == " ":
+                deciphered += " "
+                continue
+                
             nr = self.letters[letter]
             nr = nr - 3
 
