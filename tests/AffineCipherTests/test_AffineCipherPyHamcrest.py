@@ -26,7 +26,7 @@ class AffineTest(unittest.TestCase):
                     equal_to("rhy iuksq plcaz bcd nuwfo cxyl rhy tmjg vce"))
 
     def test_decipher_a_equal(self):
-        assert_that(self.temp.affine_cipher("d", 1, 3), equal_to("a"))
+        assert_that(self.temp.affine_decipher("d", 1, 3), equal_to("a"))
 
     def tearDown(self):
         self.temp = None
