@@ -33,6 +33,9 @@ class CaesarTest(unittest.TestCase):
     def test_abc_decipher(self):
         self.assertEqual(self.temp.affine_decipher("mps", 3, 12), "abc")
 
+    def test_veni_decipher(self):
+        self.assertEqual(self.temp.affine_decipher("xyzk", 3, 12), "veni")
+
     def tearDown(self):
         self.temp = None
 
