@@ -34,6 +34,9 @@ class AffineTest(unittest.TestCase):
     def test_decipher_abc_equal(self):
         assert_that(self.temp.affine_decipher("mps", 3, 12), equal_to("abc"))
 
+    def test_decipher_veni_equal(self):
+        assert_that(self.temp.affine_decipher("xyzk", 3, 12), equal_to("veni"))
+
     def tearDown(self):
         self.temp = None
 
