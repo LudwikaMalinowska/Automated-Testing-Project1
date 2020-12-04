@@ -64,6 +64,9 @@ class MorseCode:
     def morse_decode(self, morseText):
         # return self.reverse_morse_table[morseText]
 
+        if not isinstance(morseText, str):
+            raise ValueError
+
         text = ""
         morse_tab = morseText.split(" ")
         # print(morse_tab)
