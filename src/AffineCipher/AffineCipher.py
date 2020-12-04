@@ -38,7 +38,7 @@ class AffineCipher:
             if letter == " ":
                 ciphered += " "
                 continue
-                
+
             letterNr = self.letters[letter]
             letterNr *= a
             letterNr += b
