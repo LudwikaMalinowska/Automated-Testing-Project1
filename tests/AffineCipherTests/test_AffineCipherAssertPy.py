@@ -20,6 +20,10 @@ class AffineTest(unittest.TestCase):
     def test_cipher_veni_vidi(self):
         assert_that(self.temp.affine_cipher("veni vidi", 3, 12)).is_equal_to("xyzk xkvk")
 
+    def test_cipher_pangram(self):
+        assert_that(self.temp.affine_cipher("the quick brown fox jumps over the lazy dog", 3, 12))\
+            .is_equal_to("rhy iuksq plcaz bcd nuwfo cxyl rhy tmjg vce")
+
     def tearDown(self):
         self.temp = None
 
