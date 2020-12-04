@@ -52,7 +52,11 @@ class AffineCipher:
         for letter in affine_text:
             letterNr = self.letters[letter]
             letterNr = letterNr - b
+
             letterNr %= 26
+            while not letterNr % a == 0:
+                letterNr += 26
+
             letterNr /= a
             deciphered += self.reverse_letters[letterNr]
         return deciphered
