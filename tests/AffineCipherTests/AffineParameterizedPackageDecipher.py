@@ -15,6 +15,7 @@ class AffineParameterizedPackage(unittest.TestCase):
         ("mps", 3, 12, "abc"),
         ("xyzk", 3, 12, "veni"),
         ("xyzk xkvk", 3, 12, "veni vidi"),
+        ("rhy iuksq plcaz bcd nuwfo cxyl rhy tmjg vce", 3, 12, "the quick brown fox jumps over the lazy dog"),
     ])
     def test_one_parameterized(self, text, a, b, result):
         self.assertEqual(self.tmp.affine_decipher(text, a, b), result)
@@ -29,6 +30,7 @@ class AffineParameterizedPackage(unittest.TestCase):
     ("mps", 3, 12, "abc"),
     ("xyzk", 3, 12, "veni"),
     ("xyzk xkvk", 3, 12, "veni vidi"),
+    ("rhy iuksq plcaz bcd nuwfo cxyl rhy tmjg vce", 3, 12, "the quick brown fox jumps over the lazy dog"),
 ])
 def test_affine_encode_outside_class(text, a, b, result):
     r = AffineCipher()
@@ -41,6 +43,7 @@ def test_affine_encode_outside_class(text, a, b, result):
     ("mps", 3, 12, "abc"),
     ("xyzk", 3, 12, "veni"),
     ("xyzk xkvk", 3, 12, "veni vidi"),
+    ("rhy iuksq plcaz bcd nuwfo cxyl rhy tmjg vce", 3, 12, "the quick brown fox jumps over the lazy dog"),
 ])
 class AffineParameterizedPackage2(unittest.TestCase):
 
