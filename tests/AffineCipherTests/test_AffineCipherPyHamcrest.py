@@ -28,6 +28,9 @@ class AffineTest(unittest.TestCase):
     def test_decipher_a_equal(self):
         assert_that(self.temp.affine_decipher("d", 1, 3), equal_to("a"))
 
+    def test_decipher_z_equal(self):
+        assert_that(self.temp.affine_decipher("c", 1, 3), equal_to("z"))
+
     def tearDown(self):
         self.temp = None
 
