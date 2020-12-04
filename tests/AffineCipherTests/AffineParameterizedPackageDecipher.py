@@ -11,6 +11,7 @@ class AffineParameterizedPackage(unittest.TestCase):
 
     @parameterized.expand([
         ("d", 1, 3, "a"),
+        ("c", 1, 3, "z"),
     ])
     def test_one_parameterized(self, text, a, b, result):
         self.assertEqual(self.tmp.affine_decipher(text, a, b), result)
@@ -21,6 +22,7 @@ class AffineParameterizedPackage(unittest.TestCase):
 
 @parameterized([
     ("d", 1, 3, "a"),
+    ("c", 1, 3, "z"),
 ])
 def test_affine_encode_outside_class(text, a, b, result):
     r = AffineCipher()
@@ -29,6 +31,7 @@ def test_affine_encode_outside_class(text, a, b, result):
 
 @parameterized_class(('text', 'a', 'b', 'result'), [
     ("d", 1, 3, "a"),
+    ("c", 1, 3, "z"),
 ])
 class AffineParameterizedPackage2(unittest.TestCase):
 
