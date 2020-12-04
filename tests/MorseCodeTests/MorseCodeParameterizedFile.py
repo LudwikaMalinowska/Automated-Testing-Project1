@@ -5,7 +5,7 @@ from MorseCode.MorseCode import MorseCode
 class FizzBuzzParameterizedFile(unittest.TestCase):
 
     def test_from_file_encode(self):
-        fileTest = open("../../data/data_morse_encode_test")
+        fileTest = open("../../data/data_MorseCode/data_morse_encode_test")
         tmpMorse = MorseCode()
         for line in fileTest:
             if line.startswith("#") or line.startswith(" ") or line.startswith("\n"):
@@ -17,7 +17,7 @@ class FizzBuzzParameterizedFile(unittest.TestCase):
         fileTest.close()
 
     def test_from_file_decode(self):
-        fileTest = open("../../data/data_morse_decode_test")
+        fileTest = open("../../data/data_MorseCode/data_morse_decode_test")
         tmpMorse = MorseCode()
         for line in fileTest:
             if line.startswith("#") or line.startswith(" ") or line.startswith("\n"):

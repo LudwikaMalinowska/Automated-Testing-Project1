@@ -5,7 +5,7 @@ from AffineCipher.AffineCipher import AffineCipher
 class CaesarParameterizedFile(unittest.TestCase):
 
     def test_from_file_cipher(self):
-        fileTest = open("../../data/data_affine_cipher_test")
+        fileTest = open("../../data/data_AffineCipher/data_affine_cipher_test")
         tmpCaesar = AffineCipher()
         for line in fileTest:
             if line.startswith("#") or line.startswith(" ") or line.startswith("\n"):
@@ -18,7 +18,7 @@ class CaesarParameterizedFile(unittest.TestCase):
         fileTest.close()
 
     def test_from_file_decipher(self):
-        fileTest = open("../../data/data_affine_decipher_test")
+        fileTest = open("../../data/data_AffineCipher/data_affine_decipher_test")
         tmpCaesar = AffineCipher()
         for line in fileTest:
             if line.startswith("#") or line.startswith(" ") or line.startswith("\n"):
