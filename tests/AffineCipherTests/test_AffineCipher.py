@@ -39,6 +39,10 @@ class CaesarTest(unittest.TestCase):
     def test_veni_vidi_decipher(self):
         self.assertEqual(self.temp.affine_decipher("xyzk xkvk", 3, 12), "veni vidi")
 
+    def test_pangram_decipher(self):
+        self.assertEqual(self.temp.affine_decipher("rhy iuksq plcaz bcd nuwfo cxyl rhy tmjg vce", 3, 12),
+                         "the quick brown fox jumps over the lazy dog")
+
     def tearDown(self):
         self.temp = None
 
