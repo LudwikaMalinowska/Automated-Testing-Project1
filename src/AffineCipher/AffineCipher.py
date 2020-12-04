@@ -50,6 +50,10 @@ class AffineCipher:
     def affine_decipher(self, affine_text, a, b):
         deciphered = ""
         for letter in affine_text:
+            if letter == " ":
+                deciphered += " "
+                continue
+
             letterNr = self.letters[letter]
             letterNr = letterNr - b
 
