@@ -76,6 +76,9 @@ class MorseCodeTest(unittest.TestCase):
         self.assertEqual(self.temp.morse_decode("_ .... .      __._ .._ .. _._. _._      _... ._. ___ .__ _.      .._. ___ _.._      .___ .._ __ .__. ...      ___ ..._ . ._.      _ .... .      ._.. ._ __.. _.__      _.. ___ __."),
                          "the quick brown fox jumps over the lazy dog")
 
+    def test_morse_encode_raises1(self):
+        self.assertRaises(ValueError, self.temp.morse_encode, 1)
+
     def tearDown(self):
         self.temp = None
 
