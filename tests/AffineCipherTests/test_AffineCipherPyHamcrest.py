@@ -15,6 +15,9 @@ class CaesarTest(unittest.TestCase):
     def test_encode_z_equal(self):
         assert_that(self.temp.affine_cipher("z", 1, 3), equal_to("c"))
 
+    def test_encode_abc_equal(self):
+        assert_that(self.temp.affine_cipher("abc", 3, 12), equal_to("mps"))
+
     def tearDown(self):
         self.temp = None
 
