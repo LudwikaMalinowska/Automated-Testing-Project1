@@ -34,13 +34,7 @@ class AffineCipher:
 
     def affine_cipher(self, text, a, b):
 
-        if not isinstance(text, str) or not isinstance(a, int) or not isinstance(b, int):
-            raise ValueError
-
-        if a <= 0:
-            raise ValueError("Parametr a musi być dodatni")
-        if b <= 0:
-            raise ValueError("Parametr b musi być dodatni")
+        self.validateParameters(text, a, b)
 
         ciphered = ""
         for letter in text:
@@ -61,13 +55,7 @@ class AffineCipher:
 
     def affine_decipher(self, affine_text, a, b):
 
-        if not isinstance(affine_text, str) or not isinstance(a, int) or not isinstance(b, int):
-            raise ValueError
-
-        if a <= 0:
-            raise ValueError("Parametr a musi być dodatni")
-        if b <= 0:
-            raise ValueError("Parametr b musi być dodatni")
+        self.validateParameters(affine_text, a, b)
 
         deciphered = ""
         for letter in affine_text:
@@ -88,4 +76,13 @@ class AffineCipher:
             letterNr /= a
             deciphered += self.reverse_letters[letterNr]
         return deciphered
+
+    def validateParameters(self, text, a, b):
+        if not isinstance(text, str) or not isinstance(a, int) or not isinstance(b, int):
+            raise ValueError
+
+        if a <= 0:
+            raise ValueError("Parametr a musi być dodatni")
+        if b <= 0:
+            raise ValueError("Parametr b musi być dodatni")
 
