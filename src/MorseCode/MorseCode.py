@@ -53,10 +53,15 @@ class MorseCode:
             if text[i] == " ":
                 morse_text += "     "
             else:
+                letter = text[i]
+                if letter not in self.morse_table:
+                    raise ValueError(f"Key {letter} not found")
+
+                morseLetter = self.morse_table[letter]
                 if i == len(text) - 1:
-                    morse_text += self.morse_table[text[i]]
+                    morse_text += morseLetter
                 else:
-                    morse_text += self.morse_table[text[i]] + " "
+                    morse_text += morseLetter + " "
 
         return morse_text
 
