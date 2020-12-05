@@ -91,6 +91,9 @@ class MorseCodeTest(unittest.TestCase):
     def test_morse_decode_raises2(self):
         self.assertRaises(ValueError, self.temp.morse_decode, None)
 
+    def test_morse_decode_raises3(self):
+        self.assertRaises(ValueError, self.temp.morse_decode, "ą")
+
     def tearDown(self):
         self.temp = None
 
