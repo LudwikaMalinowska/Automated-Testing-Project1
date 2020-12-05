@@ -74,6 +74,9 @@ class CaesarTest(unittest.TestCase):
         assert_that(self.temp.caesar_decipher("wkh txlfn eurzq ira mxpsv ryhu wkh odcb grj"),
                     equal_to("the quick brown fox jumps over the lazy dog"))
 
+    def test_encode_exception1(self):
+        assert_that(calling(self.temp.caesar_cipher).with_args(1), raises(ValueError))
+
     def tearDown(self):
         self.temp = None
 
