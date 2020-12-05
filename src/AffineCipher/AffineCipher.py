@@ -65,6 +65,9 @@ class AffineCipher:
                 deciphered += " "
                 continue
 
+            if letter not in self.letters:
+                raise ValueError(f"Key {letter} not found")
+
             letterNr = self.letters[letter]
             letterNr = letterNr - b
 
