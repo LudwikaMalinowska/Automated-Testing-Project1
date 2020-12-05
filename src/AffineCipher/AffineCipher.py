@@ -33,6 +33,10 @@ class AffineCipher:
     reverse_letters = {v: k for k, v in letters.items()}
 
     def affine_cipher(self, text, a, b):
+
+        if not isinstance(text, str):
+            raise ValueError
+
         ciphered = ""
         for letter in text:
             if letter == " ":
