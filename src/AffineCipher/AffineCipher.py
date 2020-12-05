@@ -66,6 +66,8 @@ class AffineCipher:
 
         if a <= 0:
             raise ValueError("Parametr a musi być dodatni")
+        if b <= 0:
+            raise ValueError("Parametr b musi być dodatni")
 
         deciphered = ""
         for letter in affine_text:
