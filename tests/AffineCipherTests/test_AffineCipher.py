@@ -55,6 +55,9 @@ class CaesarTest(unittest.TestCase):
     def test_cipher_exception4(self):
         self.assertRaises(ValueError, self.temp.affine_cipher, "abc", -1, 3)
 
+    def test_cipher_exception5(self):
+        self.assertRaises(ValueError, self.temp.affine_cipher, "abc", 3, -12)
+
     def test_decipher_exception1(self):
         self.assertRaises(ValueError, self.temp.affine_decipher, 1, 1, 3)
 
@@ -66,6 +69,8 @@ class CaesarTest(unittest.TestCase):
 
     def test_decipher_exception4(self):
         self.assertRaises(ValueError, self.temp.affine_decipher, "abc", -1, 3)
+
+
 
     def tearDown(self):
         self.temp = None
