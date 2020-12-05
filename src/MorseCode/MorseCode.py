@@ -44,7 +44,6 @@ class MorseCode:
     reverse_morse_table = {v: k for k, v in morse_table.items()}
 
     def morse_encode(self, text):
-        # return self.morse_table[text]
         if not isinstance(text, str):
             raise ValueError
 
@@ -62,14 +61,12 @@ class MorseCode:
         return morse_text
 
     def morse_decode(self, morseText):
-        # return self.reverse_morse_table[morseText]
 
         if not isinstance(morseText, str):
             raise ValueError
 
         text = ""
         morse_tab = morseText.split(" ")
-        # print(morse_tab)
 
         space = 0
         for m in morse_tab:
