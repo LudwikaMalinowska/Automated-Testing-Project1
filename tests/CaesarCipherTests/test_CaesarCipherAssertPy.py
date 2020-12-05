@@ -88,6 +88,9 @@ class CaesarTest(unittest.TestCase):
     def test_decode_exception2(self):
         assert_that(self.temp.caesar_decipher).raises(ValueError).when_called_with(None)
 
+    def test_decode_exception3(self):
+        assert_that(self.temp.caesar_decipher).raises(ValueError).when_called_with("ą")
+
     def tearDown(self):
         self.temp = None
 
