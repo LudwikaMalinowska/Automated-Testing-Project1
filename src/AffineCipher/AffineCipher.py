@@ -37,6 +37,9 @@ class AffineCipher:
         if not isinstance(text, str):
             raise ValueError
 
+        if a <= 0:
+            raise ValueError("Parametr a musi być dodatni")
+
         ciphered = ""
         for letter in text:
             if letter == " ":
