@@ -82,6 +82,9 @@ class MorseCode:
                     space = 0
                 continue
             else:
-                text += self.reverse_morse_table[m]
+                if m not in self.reverse_morse_table:
+                    raise ValueError(f"Key {m} not found")
+                letter = self.reverse_morse_table[m]
+                text += letter
 
         return text
