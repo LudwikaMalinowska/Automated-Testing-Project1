@@ -52,6 +52,10 @@ class AffineCipher:
         return ciphered
 
     def affine_decipher(self, affine_text, a, b):
+
+        if not isinstance(affine_text, str):
+            raise ValueError
+
         deciphered = ""
         for letter in affine_text:
             if letter == " ":
