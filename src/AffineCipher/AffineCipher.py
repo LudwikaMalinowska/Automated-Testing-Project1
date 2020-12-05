@@ -62,6 +62,9 @@ class AffineCipher:
         if not isinstance(affine_text, str):
             raise ValueError
 
+        if a <= 0:
+            raise ValueError("Parametr a musi być dodatni")
+
         deciphered = ""
         for letter in affine_text:
             if letter == " ":
