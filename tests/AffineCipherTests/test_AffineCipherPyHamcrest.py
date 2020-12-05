@@ -62,6 +62,9 @@ class AffineTest(unittest.TestCase):
     def test_cipher_exception6(self):
         assert_that(calling(self.temp.affine_cipher).with_args("abc", "3", 12), raises(ValueError))
 
+    def test_cipher_exception7(self):
+        assert_that(calling(self.temp.affine_cipher).with_args("abc", 3, "12"), raises(ValueError))
+
     def test_decipher_exception1(self):
         assert_that(calling(self.temp.affine_decipher).with_args(1, 1, 3), raises(ValueError))
 
