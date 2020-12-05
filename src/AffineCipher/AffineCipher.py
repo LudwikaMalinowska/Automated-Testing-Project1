@@ -61,7 +61,7 @@ class AffineCipher:
 
     def affine_decipher(self, affine_text, a, b):
 
-        if not isinstance(affine_text, str):
+        if not isinstance(affine_text, str) or not isinstance(a, int):
             raise ValueError
 
         if a <= 0:
