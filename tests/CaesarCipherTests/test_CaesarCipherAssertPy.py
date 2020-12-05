@@ -79,6 +79,9 @@ class CaesarTest(unittest.TestCase):
     def test_encode_exception2(self):
         assert_that(self.temp.caesar_cipher).raises(ValueError).when_called_with(None)
 
+    def test_encode_exception3(self):
+        assert_that(self.temp.caesar_cipher).raises(ValueError).when_called_with("ą")
+
     def test_decode_exception1(self):
         assert_that(self.temp.caesar_decipher).raises(ValueError).when_called_with(1)
 
