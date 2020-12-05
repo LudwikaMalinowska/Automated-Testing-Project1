@@ -34,7 +34,7 @@ class AffineCipher:
 
     def affine_cipher(self, text, a, b):
 
-        if not isinstance(text, str):
+        if not isinstance(text, str) or not isinstance(a, int):
             raise ValueError
 
         if a <= 0:
