@@ -102,6 +102,9 @@ class MorseCodeTest(unittest.TestCase):
     def test_encode_exception1(self):
         assert_that(self.temp.morse_encode).raises(ValueError).when_called_with(1)
 
+    def test_encode_exception2(self):
+        assert_that(self.temp.morse_encode).raises(ValueError).when_called_with(None)
+
     def tearDown(self):
         self.temp = None
 
