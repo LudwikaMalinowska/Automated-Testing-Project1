@@ -43,6 +43,9 @@ class CaesarTest(unittest.TestCase):
         self.assertEqual(self.temp.affine_decipher("rhy iuksq plcaz bcd nuwfo cxyl rhy tmjg vce", 3, 12),
                          "the quick brown fox jumps over the lazy dog")
 
+    def test_cipher_exception1(self):
+        self.assertRaises(ValueError, self.temp.affine_cipher, 1)
+
     def tearDown(self):
         self.temp = None
 
