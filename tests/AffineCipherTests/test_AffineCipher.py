@@ -44,7 +44,7 @@ class CaesarTest(unittest.TestCase):
                          "the quick brown fox jumps over the lazy dog")
 
     def test_cipher_exception1(self):
-        self.assertRaises(ValueError, self.temp.affine_cipher, 1)
+        self.assertRaises(ValueError, self.temp.affine_cipher, 1, 1, 3)
 
     def tearDown(self):
         self.temp = None

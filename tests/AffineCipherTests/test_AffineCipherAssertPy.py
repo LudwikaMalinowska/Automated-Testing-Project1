@@ -44,7 +44,7 @@ class AffineTest(unittest.TestCase):
             .is_equal_to("the quick brown fox jumps over the lazy dog")
 
     def test_encode_exception1(self):
-        assert_that(self.temp.affine_cipher).raises(ValueError).when_called_with(1)
+        assert_that(self.temp.affine_cipher).raises(ValueError).when_called_with(1, 1, 3)
 
     def tearDown(self):
         self.temp = None
