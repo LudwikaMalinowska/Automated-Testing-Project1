@@ -82,6 +82,9 @@ class AffineTest(unittest.TestCase):
     def test_decipher_exception6(self):
         assert_that(self.temp.affine_decipher).raises(ValueError).when_called_with("abc", "3", 12)
 
+    def test_decipher_exception7(self):
+        assert_that(self.temp.affine_decipher).raises(ValueError).when_called_with("abc", 3, "12")
+
     def tearDown(self):
         self.temp = None
 
