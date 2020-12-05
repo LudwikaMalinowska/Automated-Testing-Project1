@@ -53,6 +53,9 @@ class CaesarCipher:
 
     def caesar_decipher(self, caesar_text):
 
+        if not isinstance(caesar_text, str):
+            raise ValueError
+
         deciphered = ""
         for letter in caesar_text:
             if letter == " ":
