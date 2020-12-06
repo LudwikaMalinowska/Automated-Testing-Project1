@@ -11,92 +11,99 @@ class MorseCodeTest(unittest.TestCase):
         assert_that(self.temp).is_instance_of(MorseCode)
 
     def test_encode_a(self):
-        assert_that(self.temp.morse_encode("a")).is_equal_to("._")
+        assert_that(self.temp.morse_encode("a")).is_equal_to(".-")
 
     def test_encode_a_starts_with(self):
         assert_that(self.temp.morse_encode("a")).starts_with('.')
 
     def test_encode_d(self):
-        assert_that(self.temp.morse_encode("d")).is_equal_to("_..")
+        assert_that(self.temp.morse_encode("d")).is_equal_to("-..")
 
     def test_encode_d_ends_with(self):
         assert_that(self.temp.morse_encode("d")).ends_with(".")
 
     def test_encode_n(self):
-        assert_that(self.temp.morse_encode("n")).is_equal_to("_.")
+        assert_that(self.temp.morse_encode("n")).is_equal_to("-.")
 
     def test_encode_n_starts_with_ends_with(self):
-        assert_that(self.temp.morse_encode("n")).starts_with('_').ends_with('.')
+        assert_that(self.temp.morse_encode("n")).starts_with('-').ends_with('.')
 
     def test_encode_z(self):
-        assert_that(self.temp.morse_encode("z")).is_equal_to("__..")
+        assert_that(self.temp.morse_encode("z")).is_equal_to("--..")
 
     def test_encode_z_contains(self):
         assert_that(self.temp.morse_encode("z")).contains(".")
 
     def test_decode_a(self):
-        assert_that(self.temp.morse_decode("._")).is_equal_to("a")
+        assert_that(self.temp.morse_decode(".-")).is_equal_to("a")
 
     def test_decode_a_doesnt_contain(self):
-        assert_that(self.temp.morse_decode("._")).does_not_contain("b")
+        assert_that(self.temp.morse_decode(".-")).does_not_contain("b")
 
     def test_decode_d(self):
-        assert_that(self.temp.morse_decode("_..")).is_equal_to("d")
+        assert_that(self.temp.morse_decode("-..")).is_equal_to("d")
 
     def test_decode_d_contain_doesnt_contain(self):
-        assert_that(self.temp.morse_decode("_..")).contains("d").does_not_contain("c")
+        assert_that(self.temp.morse_decode("-..")).contains("d").does_not_contain("c")
 
     def test_decode_n(self):
-        assert_that(self.temp.morse_decode("_.")).is_equal_to("n")
+        assert_that(self.temp.morse_decode("-.")).is_equal_to("n")
 
     def test_decode_z(self):
-        assert_that(self.temp.morse_decode("__..")).is_equal_to("z")
+        assert_that(self.temp.morse_decode("--..")).is_equal_to("z")
 
     def test_encode_abc(self):
-        assert_that(self.temp.morse_encode("abc")).is_equal_to("._ _... _._.")
+        assert_that(self.temp.morse_encode("abc")).is_equal_to(".- -... -.-.")
 
     def test_encode_xyz(self):
-        assert_that(self.temp.morse_encode("xyz")).is_equal_to("_.._ _.__ __..")
+        assert_that(self.temp.morse_encode("xyz")).is_equal_to("-..- -.-- --..")
 
     def test_encode_123(self):
-        assert_that(self.temp.morse_encode("123")).is_equal_to(".____ ..___ ...__")
+        assert_that(self.temp.morse_encode("123")).is_equal_to(".---- ..--- ...--")
 
     def test_encode_abc_def(self):
-        assert_that(self.temp.morse_encode("abc def")).is_equal_to("._ _... _._.      _.. . .._.")
+        assert_that(self.temp.morse_encode("abc def")).is_equal_to(".- -... -.-.      -.. . ..-.")
 
     def test_encode_xyz_123(self):
-        assert_that(self.temp.morse_encode("xyz 123")).is_equal_to("_.._ _.__ __..      .____ ..___ ...__")
+        assert_that(self.temp.morse_encode("xyz 123")).is_equal_to("-..- -.-- --..      .---- ..--- ...--")
 
     def test_encode_veni_vidi(self):
         assert_that(self.temp.morse_encode("the quick brown fox jumps over the lazy dog"))\
-            .is_equal_to("_ .... .      __._ .._ .. _._. _._      _... ._. ___ .__ _.      .._. ___ _.._      .___ .._ __ .__. ...      ___ ..._ . ._.      _ .... .      ._.. ._ __.. _.__      _.. ___ __.")
+            .is_equal_to(
+            "- .... .      --.- ..- .. -.-. -.-"
+            "      -... .-. --- .-- -.      ..-. --- -..-"
+            "      .--- ..- -- .---. ...      --- ...- . .-.      - .... ."
+            "      .-.. .- --.. -.--      -.. --- --."
+        )
 
 
     def test_encode_pangram(self):
-        assert_that(self.temp.morse_encode("veni vidi")).is_equal_to("..._ . _. ..      ..._ .. _.. ..")
+        assert_that(self.temp.morse_encode("veni vidi")).is_equal_to("...- . -. ..      ...- .. -.. ..")
 
     def test_decode_abc(self):
-        assert_that(self.temp.morse_decode("._ _... _._.")).is_equal_to("abc")
+        assert_that(self.temp.morse_decode(".- -... -.-.")).is_equal_to("abc")
 
     def test_decode_xyz(self):
-        assert_that(self.temp.morse_decode("_.._ _.__ __..")).is_equal_to("xyz")
+        assert_that(self.temp.morse_decode("-..- -.-- --..")).is_equal_to("xyz")
 
     def test_decode_123(self):
-        assert_that(self.temp.morse_decode(".____ ..___ ...__")).is_equal_to("123")
+        assert_that(self.temp.morse_decode(".---- ..--- ...--")).is_equal_to("123")
 
     def test_decode_abc_def(self):
-        assert_that(self.temp.morse_decode("._ _... _._.      _.. . .._.")).is_equal_to("abc def")
+        assert_that(self.temp.morse_decode(".- -... -.-.      -.. . ..-.")).is_equal_to("abc def")
 
     def test_decode_xyz_123(self):
-        assert_that(self.temp.morse_decode("_.._ _.__ __..      .____ ..___ ...__")).is_equal_to("xyz 123")
+        assert_that(self.temp.morse_decode("-..- -.-- --..      .---- ..--- ...--")).is_equal_to("xyz 123")
 
     def test_decode_veni_vidi(self):
-        assert_that(self.temp.morse_decode("..._ . _. ..      ..._ .. _.. ..")).is_equal_to("veni vidi")
+        assert_that(self.temp.morse_decode("...- . -. ..      ...- .. -.. ..")).is_equal_to("veni vidi")
 
     def test_decode_pangram(self):
-        assert_that(self.temp.morse_decode( "_ .... .      __._ .._ .. _._. _._      _... ._. ___ .__ _."
-                                            "      .._. ___ _.._      .___ .._ __ .__. ...   "
-                                            "   ___ ..._ . ._.      _ .... .      ._.. ._ __.. _.__      _.. ___ __."))\
+        assert_that(self.temp.morse_decode(
+            "- .... .      --.- ..- .. -.-. -.-"
+            "      -... .-. --- .-- -.      ..-. --- -..-"
+            "      .--- ..- -- .---. ...      --- ...- . .-.      - .... ."
+            "      .-.. .- --.. -.--      -.. --- --."))\
             .is_equal_to("the quick brown fox jumps over the lazy dog")
 
     def test_encode_exception1(self):

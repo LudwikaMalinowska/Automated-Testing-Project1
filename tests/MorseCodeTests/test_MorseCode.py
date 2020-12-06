@@ -9,71 +9,78 @@ class MorseCodeTest(unittest.TestCase):
         self.temp = MorseCode()
 
     def test_morse_a_encode(self):
-        self.assertEqual(self.temp.morse_encode("a"), "._")
+        self.assertEqual(self.temp.morse_encode("a"), ".-")
 
     def test_morse_d_encode(self):
-        self.assertEqual(self.temp.morse_encode("d"), "_..")
+        self.assertEqual(self.temp.morse_encode("d"), "-..")
 
     def test_morse_n_encode(self):
-        self.assertEqual(self.temp.morse_encode("n"), "_.")
+        self.assertEqual(self.temp.morse_encode("n"), "-.")
 
     def test_morse_z_encode(self):
-        self.assertEqual(self.temp.morse_encode("z"), "__..")
+        self.assertEqual(self.temp.morse_encode("z"), "--..")
 
     def test_morse_a_decode(self):
-        self.assertEqual(self.temp.morse_decode("._"), "a")
+        self.assertEqual(self.temp.morse_decode(".-"), "a")
 
     def test_morse_d_decode(self):
-        self.assertEqual(self.temp.morse_decode("_.."), "d")
+        self.assertEqual(self.temp.morse_decode("-.."), "d")
 
     def test_morse_n_decode(self):
-        self.assertEqual(self.temp.morse_decode("_."), "n")
+        self.assertEqual(self.temp.morse_decode("-."), "n")
 
     def test_morse_z_decode(self):
-        self.assertEqual(self.temp.morse_decode("__.."), "z")
+        self.assertEqual(self.temp.morse_decode("--.."), "z")
 
     def test_morse_abc_encode(self):
-        self.assertEqual(self.temp.morse_encode("abc"), "._ _... _._.")
+        self.assertEqual(self.temp.morse_encode("abc"), ".- -... -.-.")
 
     def test_morse_xyz_encode(self):
-        self.assertEqual(self.temp.morse_encode("xyz"), "_.._ _.__ __..")
+        self.assertEqual(self.temp.morse_encode("xyz"), "-..- -.-- --..")
 
     def test_morse_123_encode(self):
-        self.assertEqual(self.temp.morse_encode("123"), ".____ ..___ ...__")
+        self.assertEqual(self.temp.morse_encode("123"), ".---- ..--- ...--")
 
     def test_morse_abc_def_encode(self):
-        self.assertEqual(self.temp.morse_encode("abc def"), "._ _... _._.      _.. . .._.")
+        self.assertEqual(self.temp.morse_encode("abc def"), ".- -... -.-.      -.. . ..-.")
 
     def test_morse_xyz_123_encode(self):
-        self.assertEqual(self.temp.morse_encode("xyz 123"), "_.._ _.__ __..      .____ ..___ ...__")
+        self.assertEqual(self.temp.morse_encode("xyz 123"), "-..- -.-- --..      .---- ..--- ...--")
 
     def test_morse_veni_vidi_encode(self):
-        self.assertEqual(self.temp.morse_encode("veni vidi"), "..._ . _. ..      ..._ .. _.. ..")
+        self.assertEqual(self.temp.morse_encode("veni vidi"), "...- . -. ..      ...- .. -.. ..")
 
     def test_morse_pangram_encode(self):
         self.assertEqual(self.temp.morse_encode("the quick brown fox jumps over the lazy dog"),
-                         "_ .... .      __._ .._ .. _._. _._      _... ._. ___ .__ _.      .._. ___ _.._      .___ .._ __ .__. ...      ___ ..._ . ._.      _ .... .      ._.. ._ __.. _.__      _.. ___ __.")
+                         "- .... .      --.- ..- .. -.-. -.-"
+                         "      -... .-. --- .-- -.      ..-. --- -..-"
+                         "      .--- ..- -- .---. ...      --- ...- . .-.      - .... ."
+                         "      .-.. .- --.. -.--      -.. --- --.")
 
     def test_morse_abc_decode(self):
-        self.assertEqual(self.temp.morse_decode("._ _... _._."), "abc")
+        self.assertEqual(self.temp.morse_decode(".- -... -.-."), "abc")
 
     def test_morse_xyz_decode(self):
-        self.assertEqual(self.temp.morse_decode("_.._ _.__ __.."), "xyz")
+        self.assertEqual(self.temp.morse_decode("-..- -.-- --.."), "xyz")
 
     def test_morse_123_decode(self):
-        self.assertEqual(self.temp.morse_decode(".____ ..___ ...__"), "123")
+        self.assertEqual(self.temp.morse_decode(".---- ..--- ...--"), "123")
 
     def test_morse_abc_def_decode(self):
-        self.assertEqual(self.temp.morse_decode("._ _... _._.      _.. . .._."), "abc def")
+        self.assertEqual(self.temp.morse_decode(".- -... -.-.      -.. . ..-."), "abc def")
 
     def test_morse_xyz_123_decode(self):
-        self.assertEqual(self.temp.morse_decode("_.._ _.__ __..      .____ ..___ ...__"), "xyz 123")
+        self.assertEqual(self.temp.morse_decode("-..- -.-- --..      .---- ..--- ...--"), "xyz 123")
 
     def test_morse_veni_vidi_decode(self):
-        self.assertEqual(self.temp.morse_decode("..._ . _. ..      ..._ .. _.. .."), "veni vidi")
+        self.assertEqual(self.temp.morse_decode("...- . -. ..      ...- .. -.. .."), "veni vidi")
 
     def test_morse_pangram_decode(self):
-        self.assertEqual(self.temp.morse_decode("_ .... .      __._ .._ .. _._. _._      _... ._. ___ .__ _.      .._. ___ _.._      .___ .._ __ .__. ...      ___ ..._ . ._.      _ .... .      ._.. ._ __.. _.__      _.. ___ __."),
+        self.assertEqual(self.temp.morse_decode(
+            "- .... .      --.- ..- .. -.-. -.-"
+            "      -... .-. --- .-- -.      ..-. --- -..-"
+            "      .--- ..- -- .---. ...      --- ...- . .-.      - .... ."
+            "      .-.. .- --.. -.--      -.. --- --."),
                          "the quick brown fox jumps over the lazy dog")
 
     def test_morse_encode_raises1(self):
