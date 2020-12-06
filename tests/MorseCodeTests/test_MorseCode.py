@@ -57,6 +57,12 @@ class MorseCodeTest(unittest.TestCase):
                          "      .--- ..- -- .---. ...      --- ...- . .-.      - .... ."
                          "      .-.. .- --.. -.--      -.. --- --.")
 
+    def test_morse_special_chars_encode(self):
+        special_chars = ",.?;:/-'" + '"' + "_()=+@"
+        special_chars_morse = "--..-- .-.-.- ..--.. -.-.-. ---... -..-. -....- .----. .-..-. ..--.- "
+        "-.--. -.--.- -...- .-.-. .--.-."
+        self.assertEqual(self.temp.morse_encode(special_chars), special_chars_morse)
+
     def test_morse_abc_decode(self):
         self.assertEqual(self.temp.morse_decode(".- -... -.-."), "abc")
 
