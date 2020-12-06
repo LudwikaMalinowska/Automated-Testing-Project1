@@ -111,6 +111,12 @@ class MorseCodeTest(unittest.TestCase):
             "      .-.. .- --.. -.--      -.. --- --."))\
             .is_equal_to("the quick brown fox jumps over the lazy dog")
 
+    def test_decode_special_characters(self):
+        special_chars = ",.?;:/-'" + '"' + "_()=+@"
+        special_chars_morse = "--..-- .-.-.- ..--.. -.-.-. ---... -..-. -....- .----. .-..-. ..--.- "\
+        "-.--. -.--.- -...- .-.-. .--.-."
+        assert_that(self.temp.morse_decode(special_chars_morse)).is_equal_to(special_chars)
+
     def test_encode_exception1(self):
         assert_that(self.temp.morse_encode).raises(ValueError).when_called_with(1)
 
