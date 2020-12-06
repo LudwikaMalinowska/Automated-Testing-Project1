@@ -24,7 +24,10 @@ class MorseCodeParameterizedPackage(unittest.TestCase):
          "      -... .-. --- .-- -.      ..-. --- -..-"
          "      .--- ..- -- .---. ...      --- ...- . .-.      - .... ."
          "      .-.. .- --.. -.--      -.. --- --.",
-         "the quick brown fox jumps over the lazy dog")
+         "the quick brown fox jumps over the lazy dog"),
+        ("--..-- .-.-.- ..--.. -.-.-. ---... -..-. -....- .----. .-..-. ..--.- "
+         "-.--. -.--.- -...- .-.-. .--.-.",
+         ",.?;:/-'" + '"' + "_()=+@"),
     ])
     def test_one_parameterized(self, text, result):
         self.assertEqual(self.tmp.morse_decode(text), result)
@@ -48,7 +51,10 @@ class MorseCodeParameterizedPackage(unittest.TestCase):
      "      -... .-. --- .-- -.      ..-. --- -..-"
      "      .--- ..- -- .---. ...      --- ...- . .-.      - .... ."
      "      .-.. .- --.. -.--      -.. --- --.",
-     "the quick brown fox jumps over the lazy dog")
+     "the quick brown fox jumps over the lazy dog"),
+    ("--..-- .-.-.- ..--.. -.-.-. ---... -..-. -....- .----. .-..-. ..--.- "
+     "-.--. -.--.- -...- .-.-. .--.-.",
+     ",.?;:/-'" + '"' + "_()=+@"),
 ])
 def test_morse_encode_outside_class(text, result):
     r = MorseCode()
@@ -70,7 +76,10 @@ def test_morse_encode_outside_class(text, result):
      "      -... .-. --- .-- -.      ..-. --- -..-"
      "      .--- ..- -- .---. ...      --- ...- . .-.      - .... ."
      "      .-.. .- --.. -.--      -.. --- --.",
-     "the quick brown fox jumps over the lazy dog")
+     "the quick brown fox jumps over the lazy dog"),
+    ("--..-- .-.-.- ..--.. -.-.-. ---... -..-. -....- .----. .-..-. ..--.- "
+     "-.--. -.--.- -...- .-.-. .--.-.",
+     ",.?;:/-'" + '"' + "_()=+@"),
 ])
 class MorseCodeParameterizedPackage2(unittest.TestCase):
 
