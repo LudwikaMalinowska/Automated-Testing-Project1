@@ -41,7 +41,24 @@ elif cipher_type == "2":
     else:
         print("Podaj prawidłowy numer")
 elif cipher_type == "3":
-    ...
+    print("1. Tekst na Szyfr Cezara")
+    print("2. Szyfr Cezara na tekst")
+    aff = AffineCipher()
+    nr = input()
+    if nr == "1":
+        text = input("Podaj text: ")
+        a = int(input("Podaj parametr a: "))
+        b = int(input("Podaj parametr b: "))
+        aff_text = aff.affine_cipher(text, a, b)
+        print(aff_text)
+    elif nr == "2":
+        aff_text = input("Podaj text: ")
+        a = int(input("Podaj parametr a: "))
+        b = int(input("Podaj parametr b: "))
+        text = aff.affine_decipher(aff_text, a, b)
+        print(text)
+    else:
+        print("Podaj prawidłowy numer")
 
 else:
     print("Podaj prawidłowy numer")
