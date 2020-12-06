@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="" uuid="fd5f775c-0d71-4de0-834d-3d27a998362d">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\Lucy\Lusia\UG\Semestr 3\Testowanie automatyczne\Laby\Projekt1\projekt-1-LudwikaMalinowska\tests\MorseCodeTests\.coverage</jdbc-url>
+    </data-source>
+  </component>
+</project>
